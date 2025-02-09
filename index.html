@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Denied</title>
+    <style>
+        body {
+            background-color: black;
+            color: #00ff00;
+            font-family: monospace;
+            text-align: center;
+            padding-top: 15%;
+        }
+        .error {
+            font-size: 24px;
+            font-weight: bold;
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid #00ff00;
+            width: 0;
+            animation: typing 2s steps(30, end) forwards, blink 0.8s infinite;
+        }
+        .code {
+            margin-top: 10px;
+            font-size: 18px;
+            opacity: 0.7;
+            display: none;
+        }
+        .input-section {
+            margin-top: 20px;
+            display: none;
+        }
+        input {
+            background-color: black;
+            border: 1px solid #00ff00;
+            color: #00ff00;
+            font-family: monospace;
+            padding: 5px;
+            text-align: center;
+        }
+        button {
+            background-color: #00ff00;
+            color: black;
+            font-family: monospace;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+    </style>
+</head>
+<body>
+    <div class="error" id="errorText">ACCESS DENIED - IP NOT VERIFIED</div>
+    <div class="code" id="code">Enter Access Code:</div>
+    <div class="input-section" id="inputSection">
+        <input type="text" id="accessCode" placeholder="Enter Code">
+        <button onclick="checkAccess()">Submit</button>
+    </div>
+    <script>
+        setTimeout(() => {
+            document.getElementById("code").style.display = "block";
+            document.getElementById("inputSection").style.display = "block";
+        }, 2500); // نمایش بعد از تایپ شدن متن
+        
+        function checkAccess() {
+            const code = document.getElementById("accessCode").value;
+            if (code === "4166") {
+                alert("Access Granted!");
+                document.body.innerHTML = "<h1>Welcome, Authorized User</h1>";
+            } else {
+                alert("Access Denied!");
+            }
+        }
+    </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
